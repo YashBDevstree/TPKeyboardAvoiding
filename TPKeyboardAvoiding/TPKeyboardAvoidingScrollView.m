@@ -16,7 +16,6 @@
 @implementation TPKeyboardAvoidingScrollView
 
 #pragma mark - Setup/Teardown
-
 - (void)setupKeyboardAvoiding {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TPKeyboardAvoiding_keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TPKeyboardAvoiding_keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -63,7 +62,10 @@
 - (void)scrollToActiveTextField {
     return [self TPKeyboardAvoiding_scrollToActiveTextField];
 }
-
+- (BOOL)keyboardVisible {
+    return [self TPkeyboardVisible];
+    
+}
 #pragma mark - Responders, events
 
 -(void)willMoveToSuperview:(UIView *)newSuperview {

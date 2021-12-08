@@ -13,4 +13,5 @@
 - (void)contentSizeToFit;
 - (BOOL)focusNextTextField;
 - (void)scrollToActiveTextField;
+- (BOOL)keyboardVisible;
 @end

@@ -244,7 +244,9 @@ static const int kStateKey;
 }
 
 #pragma mark - Helpers
-
+- (BOOL)TPkeyboardVisible {
+    return [self keyboardAvoidingState].keyboardVisible;
+}
 - (UIView*)TPKeyboardAvoiding_findFirstResponderBeneathView:(UIView*)view {
     // Search recursively for first responder
     for ( UIView *childView in view.subviews ) {
